@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive mechanical engineering resources for students">
+    <title>FS1 Engineering Resources</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS for main page (main.css) */
+        :root {
+            /* Enhanced color palette */
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #3b82f6;
+            --secondary: #10b981;
+            --secondary-dark: #059669;
+            --accent: #f59e0b;
+            --accent-dark: #d97706;
+            --error: #ef4444;
+            --success: #10b981;
+            --warning: #f59e0b;
+            
+            /* Enhanced neutrals */
+            --white: #ffffff;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            
+            /* Theme variables */
+            --bg: var(--white);
+            --surface: var(--white);
+            --text: var(--gray-900);
+            --text-secondary: var(--gray-600);
+            --border: var(--gray-200);
+            --hover: var(--gray-50);
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            --gradient-secondary: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            --gradient-hero: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(16, 185, 129, 0.1) 50%, rgba(245, 158, 11, 0.1) 100%);
+            
+            /* Spacing system */
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-5: 1.25rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-10: 2.5rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --space-20: 5rem;
+            
+            /* Typography scale */
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2.25rem;
+            --text-5xl: 3rem;
+            --text-6xl: 3.75rem;
+            
+            /* Enhanced shadows */
+            --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+            
+            /* Border radius */
+            --radius-sm: 0.125rem;
+            --radius: 0.25rem;
+            --radius-md: 0.375rem;
+            --radius-lg: 0.5rem;
+            --radius-xl: 0.75rem;
+            --radius-2xl: 1rem;
+            --radius-3xl: 1.5rem;
+            --radius-full: 9999px;
+            
+            /* Transitions */
+            --transition-fast: 150ms ease;
+            --transition-base: 250ms ease;
+            --transition-slow: 400ms ease;
+        }
+
+        /* Dark theme */
+        [data-theme="dark"] {
+            --bg: var(--gray-900);
+            --surface: var(--gray-800);
+            --text: var(--gray-100);
+            --text-secondary: var(--gray-400);
+            --border: var(--gray-700);
+            --hover: var(--gray-800);
+            
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary: #10b981;
+            --accent: #fbbf24;
+            
+            --gradient-hero: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(16, 185, 129, 0.1) 50%, rgba(251, 191, 36, 0.1) 100%);
+        }
+
+        /* Reset & Base Styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            transition: background-color var(--transition-base), color var(--transition-base);
+            font-size: var(--text-base);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        code, pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+
+        /* Layout */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-6);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            line-height: 1.25;
+            color: var(--text);
+            letter-spacing: -0.025em;
+        }
+
+        h1 {
+            font-size: var(--text-5xl);
+            font-weight: 700;
+            margin-bottom: var(--space-6);
+        }
+
+        h2 {
+            font-size: var(--text-4xl);
+            margin-bottom: var(--space-5);
+        }
+
+        h3 {
+            font-size: var(--text-2xl);
+            margin-bottom: var(--space-4);
+        }
+
+        h4 {
+            font-size: var(--text-xl);
+            margin-bottom: var(--space-3);
+        }
+
+        p {
+            margin-bottom: var(--space-4);
+            color: var(--text-secondary);
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+        }
+
+        /* Enhanced Button System */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+            padding: var(--space-3) var(--space-6);
+            border-radius: var(--radius-lg);
+            font-weight: 500;
+            font-size: var(--text-sm);
+            line-height: 1;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            border: 1px solid transparent;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left var(--transition-base);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-secondary {
+            background: var(--gradient-secondary);
+            color: white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-outline {
+            background: var(--surface);
+            border-color: var(--border);
+            color: var(--text);
+        }
+
+        .btn-outline:hover {
+            background: var(--hover);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-secondary);
+        }
+
+        .btn-ghost:hover {
+            background: var(--hover);
+            color: var(--text);
+        }
+
+        .btn-sm {
+            padding: var(--space-2) var(--space-4);
+            font-size: var(--text-xs);
+        }
+
+        .btn-lg {
+            padding: var(--space-4) var(--space-8);
+            font-size: var(--text-lg);
+        }
+
+        /* Enhanced Card System */
+        .card {
+            background: var(--surface);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            transition: all var(--transition-base);
+            border: 1px solid var(--border);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .card-header {
+            padding: var(--space-6);
+            border-bottom: 1px solid var(--border);
+            background: var(--hover);
+        }
+
+        .card-body {
+            padding: var(--space-6);
+        }
+
+        .card-footer {
+            padding: var(--space-6);
+            border-top: 1px solid var(--border);
+            background: var(--hover);
+        }
+
+        /* Enhanced Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: all var(--transition-base);
+        }
+
+        [data-theme="dark"] .navbar {
+            background: rgba(17, 24, 39, 0.8);
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-4) 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--radius-xl);
+            font-size: var(--text-xl);
+            box-shadow: var(--shadow-md);
+        }
+
+        .logo-text h1 {
+            font-size: var(--text-2xl);
+            margin-bottom: 0;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-text p {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--space-2);
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            font-weight: 500;
+            padding: var(--space-3) var(--space-4);
+            border-radius: var(--radius-lg);
+            transition: all var(--transition-fast);
+            position: relative;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: all var(--transition-fast);
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary);
+            background: var(--hover);
+        }
+
+        .nav-link.active::before {
+            width: 80%;
+        }
+
+        /* Enhanced Hero Section */
+        .hero {
+            padding: var(--space-20) 0;
+            background: var(--gradient-hero);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(0,0,0,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: var(--text-6xl);
+            font-weight: 800;
+            margin-bottom: var(--space-6);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+        }
+
+        .hero-description {
+            font-size: var(--text-xl);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-8);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-8);
+            margin-top: var(--space-10);
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+
+        .hero-stat-label {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Enhanced Sections */
+        .section {
+            padding: var(--space-20) 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--space-12);
+        }
+
+        .section-subtitle {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+            font-size: var(--text-lg);
+        }
+
+        /* Enhanced Module Grid */
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-8);
+        }
+
+        .module-card {
+            background: var(--surface);
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            transition: all var(--transition-base);
+            border: 1px solid var(--border);
+            position: relative;
+        }
+
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform var(--transition-base);
+        }
+
+        .module-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .module-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .module-card-header {
+            padding: var(--space-6);
+            background: var(--gradient-primary);
+            color: white;
+            position: relative;
+        }
+
+        .module-card-header::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid var(--primary);
+        }
+
+        .module-card-body {
+            padding: var(--space-6);
+        }
+
+        .module-card-footer {
+            padding: var(--space-6);
+            border-top: 1px solid var(--border);
+            background: var(--hover);
+        }
+
+        /* Enhanced Flashcard System */
+        .flashcard-container {
+            max-width: 600px;
+            margin: var(--space-12) auto;
+        }
+
+        .flashcard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-6);
+        }
+
+        .flashcard-progress {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            background: var(--hover);
+            padding: var(--space-2) var(--space-4);
+            border-radius: var(--radius-full);
+        }
+
+        .flashcard {
+            background: var(--surface);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-lg);
+            min-height: 300px;
+            perspective: 1000px;
+            margin-bottom: var(--space-6);
+            cursor: pointer;
+            transition: box-shadow var(--transition-base);
+        }
+
+        .flashcard:hover {
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            padding: var(--space-8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: var(--radius-2xl);
+        }
+
+        .flashcard-front {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .flashcard-back {
+            background: var(--gradient-secondary);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-question, .flashcard-answer {
+            font-size: var(--text-xl);
+            font-weight: 500;
+            margin-bottom: var(--space-4);
+            line-height: 1.4;
+        }
+
+        .flashcard-hint {
+            font-size: var(--text-sm);
+            opacity: 0.8;
+            margin-top: var(--space-4);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .flashcard-actions {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-3);
+            margin-top: var(--space-6);
+        }
+
+        .flashcard-nav {
+            display: flex;
+            justify-content: space-between;
+            gap: var(--space-4);
+            margin-top: var(--space-6);
+        }
+
+        /* Enhanced Problem Cards */
+        .practice-problem {
+            background: var(--surface);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-sm);
+            padding: var(--space-6);
+            margin-bottom: var(--space-6);
+            border-left: 4px solid var(--primary);
+            transition: all var(--transition-base);
+        }
+
+        .practice-problem:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .solution {
+            display: none;
+            padding-top: var(--space-4);
+            border-top: 1px solid var(--border);
+            margin-top: var(--space-4);
+            background: var(--hover);
+            border-radius: var(--radius-lg);
+            padding: var(--space-4);
+        }
+
+        .solution.active {
+            display: block;
+            animation: fadeInUp 0.3s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Enhanced Footer */
+        .footer {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: var(--space-16) 0 var(--space-8);
+            margin-top: var(--space-20);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-8);
+        }
+
+        .footer-column h3 {
+            font-size: var(--text-lg);
+            margin-bottom: var(--space-4);
+            color: var(--text);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-link {
+            margin-bottom: var(--space-2);
+        }
+
+        .footer-link a {
+            color: var(--text-secondary);
+            transition: color var(--transition-fast);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .footer-link a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: var(--space-8);
+            padding-top: var(--space-6);
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: var(--text-sm);
+        }
+
+        /* Enhanced Dark Mode Toggle */
+        .theme-toggle {
+            background: var(--hover);
+            border: 1px solid var(--border);
+            color: var(--text);
+            cursor: pointer;
+            font-size: var(--text-lg);
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .theme-toggle:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Enhanced Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: var(--space-6);
+            right: var(--space-6);
+            width: 56px;
+            height: 56px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-base);
+            z-index: 99;
+            border: none;
+            cursor: pointer;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Enhanced Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: var(--text-5xl);
+            }
+            
+            .hero-stats {
+                gap: var(--space-6);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--space-4);
+            }
+            
+            .navbar-container {
+                flex-direction: column;
+                gap: var(--space-4);
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: var(--space-16) 0;
+            }
+            
+            .hero-title {
+                font-size: var(--text-4xl);
+            }
+
+            .hero-description {
+                font-size: var(--text-lg);
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: var(--space-4);
+            }
+
+            .module-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .flashcard-actions {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .flashcard-nav {
+                flex-direction: column;
+            }
+            
+            .section {
+                padding: var(--space-16) 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: var(--text-3xl);
+            }
+
+            .hero-description {
+                font-size: var(--text-base);
+            }
+
+            .flashcard-actions {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn-lg {
+                padding: var(--space-3) var(--space-6);
+                font-size: var(--text-base);
+            }
+        }
+
+        /* Enhanced Topic System */
+        .topic-list {
+            list-style: none;
+            space-y: var(--space-3);
+        }
+
+        .topic-item {
+            margin-bottom: var(--space-3);
+        }
+
+        .topic-btn {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-4) var(--space-5);
+            background: var(--hover);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .topic-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .topic-btn[aria-expanded="true"] {
+            background: var(--primary);
+            color: white;
+        }
+
+        .topic-btn[aria-expanded="true"] .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .toggle-icon {
+            transition: transform var(--transition-base);
+        }
+
+        .topic-content {
+            padding: var(--space-5);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-top: none;
+            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+            margin-top: -1px;
+            display: none;
+        }
+
+        .topic-content.active {
+            display: block;
+            animation: fadeInUp 0.3s ease-out;
+        }
+
+        /* Module icons */
+        .module-icon {
+            font-size: var(--text-4xl);
+            margin-bottom: var(--space-4);
+            color: var(--primary);
+        }
+
+        /* Grid utility classes */
+        .grid {
+            display: grid;
+        }
+
+        .grid-cols-1 {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+
+        .grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .grid-cols-3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .gap-6 {
+            gap: var(--space-6);
+        }
+
+        .gap-8 {
+            gap: var(--space-8);
+        }
+
+        /* Margin utilities */
+        .mt-1 { margin-top: var(--space-1); }
+        .mt-2 { margin-top: var(--space-2); }
+        .mt-3 { margin-top: var(--space-3); }
+        .mt-4 { margin-top: var(--space-4); }
+        .mt-5 { margin-top: var(--space-5); }
+        .mt-6 { margin-top: var(--space-6); }
+        .mt-8 { margin-top: var(--space-8); }
+        .mt-10 { margin-top: var(--space-10); }
+        
+        .mb-1 { margin-bottom: var(--space-1); }
+        .mb-2 { margin-bottom: var(--space-2); }
+        .mb-3 { margin-bottom: var(--space-3); }
+        .mb-4 { margin-bottom: var(--space-4); }
+        .mb-5 { margin-bottom: var(--space-5); }
+        .mb-6 { margin-bottom: var(--space-6); }
+        .mb-8 { margin-bottom: var(--space-8); }
+        .mb-10 { margin-bottom: var(--space-10); }
+        
+        .mr-2 { margin-right: var(--space-2); }
+        .ml-2 { margin-left: var(--space-2); }
+
+        /* Background utilities */
+        .bg-blue-50 {
+            background-color: rgba(239, 246, 255, 1);
+        }
+
+        [data-theme="dark"] .bg-blue-50 {
+            background-color: rgba(30, 41, 59, 1);
+        }
+
+        /* Text utilities */
+        .text-green-500 {
+            color: #10b981;
+        }
+
+        .text-blue-500 {
+            color: #3b82f6;
+        }
+
+        /* Flex utilities */
+        .flex {
+            display: flex;
+        }
+
+        .items-start {
+            align-items: flex-start;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        /* Hidden utilities */
+        .hidden {
+            display: none;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* Text alignment */
+        .text-center {
+            text-align: center;
+        }
+
+        /* Module-specific styles */
+        .module-header {
+            text-align: center;
+            margin-bottom: var(--space-12);
+            position: relative;
+        }
+
+        .module-header::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-primary);
+            margin: var(--space-6) auto 0;
+            border-radius: var(--radius-full);
+        }
+
+        .module-icon-container {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto var(--space-6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--radius-full);
+            font-size: var(--text-4xl);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Flashcard demo section */
+        .flashcard-demo-section {
+            background: var(--gradient-hero);
+            padding: var(--space-12) 0;
+            border-radius: var(--radius-2xl);
+            margin: var(--space-12) 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link sr-only">Skip to content</a>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>FS1 Engineering</h1>
+                    <p>Mechanical Engineering Resources</p>
+                </div>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#about" class="nav-link active">About</a>
+                <a href="#modules" class="nav-link">Modules</a>
+                <a href="#opportunities" class="nav-link">Opportunities</a>
+                <a href="#tools" class="nav-link">Study Tools</a>
+                <button class="theme-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">Master Mechanical Engineering</h1>
+            <p class="hero-description">Comprehensive resources for first-year mechanical engineering students</p>
+            <a href="#modules" class="btn btn-primary btn-lg">Explore Modules</a>
+            
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-number">9</span>
+                    <span class="hero-stat-label">Modules</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">180+</span>
+                    <span class="hero-stat-label">Flashcards</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">100+</span>
+                    <span class="hero-stat-label">Practice Problems</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main content -->
+    <main id="main-content">
+        <!-- About section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>My Academic Journey</h2>
+                    <p class="section-subtitle">From Belgium to the UK, overcoming challenges to pursue engineering</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-body">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <h3>My Story</h3>
+                                <p>Originally from Belgium, I moved unexpectedly to the UK where I faced the challenge of learning English during sixth form. Despite starting with limited English knowledge, I achieved AAB in French, Mathematics, and Further Mathematics.</p>
+                                <p>My journey wasn't easy
+                                                                  <p>Now I'm studying Mechanical Engineering at a Russell Group university, and I created this platform to share what I've learned about effective studying in STEM subjects. My experience of transitioning between two different education systems has given me unique insights into learning methodologies that I want to share with others.</p>
+                            </div>
+                            
+                            <div class="card bg-blue-50 border-l-4 border-blue-500 p-6">
+                                <h3>My Motivation</h3>
+                                <ul class="space-y-4">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                        <span>To demonstrate that academic transformation is possible with the right mindset and techniques.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                        <span>To break down complex engineering concepts into clear, digestible explanations.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                        <span>To share organizational systems that make engineering studies more manageable.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                        <span>To create a living resource that evolves with my studies.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modules section -->
+        <section id="modules" class="section bg-gray-50">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Engineering Modules</h2>
+                    <p class="section-subtitle">Comprehensive resources for all first-year mechanical engineering modules</p>
+                </div>
+                
+                <div class="module-grid" id="module-container">
+                    <!-- Modules will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Flashcard Demo section -->
+        <section class="flashcard-demo-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Interactive Learning</h2>
+                    <p class="section-subtitle">Try our flashcard system to enhance your study sessions</p>
+                </div>
+                
+                <div class="flashcard-container">
+                    <div class="flashcard-header">
+                        <h3>Engineering Mathematics</h3>
+                        <div class="flashcard-progress">Card 1 of 5</div>
+                    </div>
+                    
+                    <div class="flashcard" id="flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">
+                                <div class="flashcard-question">What is the derivative of sin(x)?</div>
+                                <div class="flashcard-hint"><i class="fas fa-lightbulb"></i> Click to flip</div>
+                            </div>
+                            <div class="flashcard-back">
+                                <div class="flashcard-answer">The derivative of sin(x) is cos(x)</div>
+                                <div class="flashcard-hint"><i class="fas fa-undo"></i> Click to flip back</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flashcard-actions">
+                        <button class="btn btn-outline" onclick="markCard('again')">
+                            <i class="fas fa-redo mr-2"></i> Again
+                        </button>
+                        <button class="btn btn-outline" onclick="markCard('good')">
+                            <i class="fas fa-check mr-2"></i> Good
+                        </button>
+                    </div>
+                    
+                    <div class="flashcard-nav">
+                        <button class="btn btn-outline" onclick="prevCard()">
+                            <i class="fas fa-arrow-left mr-2"></i> Previous
+                        </button>
+                        <button class="btn btn-primary" onclick="nextCard()">
+                            Next <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Opportunities section -->
+        <section id="opportunities" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>University Opportunities</h2>
+                    <p class="section-subtitle">Make the most of your university experience</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Summer Schools</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>I'm attending HKUST for a summer school program. Many universities offer these opportunities - check your institution's international office.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-outline btn-sm">Learn more</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Student Societies</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>I'm active in the Rocketry Society and will be on the committee next year. Societies are great for networking and skill development.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-outline btn-sm">Learn more</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Student Representation</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Being a student rep has helped me develop leadership skills and make a difference in my department.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-outline btn-sm">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Study Tools section -->
+        <section id="tools" class="section bg-gray-50">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Study Tools & Methods</h2>
+                    <p class="section-subtitle">Effective tools and methods to enhance your engineering studies</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Anki Flashcards</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Great for active recall and spaced repetition. I use it for formulas, definitions, and problem-solving methods.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-outline btn-sm">Get Started</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Organized File System</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>I create structured folders for each module to keep all resources organized and easily accessible.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-outline btn-sm">View System</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Practical Work</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>The university makerspace is invaluable for hands-on learning and applying theoretical knowledge.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-outline btn-sm">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work-Life Balance section -->
+        <section id="balance" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Work-Life Balance</h2>
+                    <p class="section-subtitle">Achieving academic success while enjoying university life</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-body">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <h3>Personal Experience</h3>
+                                <p>During my first year, I was able to:</p>
+                                <ul class="space-y-2 mt-4">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Enjoy time with friends and my girlfriend</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Travel to Thailand for a month</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Serve as a student representative</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Participate actively in the Rocketry Society</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Do extensive DIY projects in my house</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h3>Key Strategies</h3>
+                                <div class="space-y-4 mt-4">
+                                    <div class="p-4 bg-blue-50 rounded-lg">
+                                        <h4 class="font-medium">Effective Time Management</h4>
+                                        <p class="text-sm mt-1">Prioritize tasks and use techniques like time blocking to stay productive.</p>
+                                    </div>
+                                    
+                                    <div class="p-4 bg-blue-50 rounded-lg">
+                                        <h4 class="font-medium">Active Learning</h4>
+                                        <p class="text-sm mt-1">Focus on understanding rather than memorization to reduce study time.</p>
+                                    </div>
+                                    
+                                    <div class="p-4 bg-blue-50 rounded-lg">
+                                        <h4 class="font-medium">Work-Life Boundaries</h4>
+                                        <p class="text-sm mt-1">Schedule downtime and stick to it to prevent burnout.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>FS1 Engineering</h3>
+                    <p>Comprehensive mechanical engineering resources for students created by a student.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#about"><i class="fas fa-user mr-2"></i> About</a></li>
+                        <li class="footer-link"><a href="#modules"><i class="fas fa-book mr-2"></i> Modules</a></li>
+                        <li class="footer-link"><a href="#tools"><i class="fas fa-tools mr-2"></i> Study Tools</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#"><i class="fab fa-linkedin mr-2"></i> LinkedIn</a></li>
+                        <li class="footer-link"><a href="#"><i class="fab fa-github mr-2"></i> GitHub</a></li>
+                        <li class="footer-link"><a href="#"><i class="fas fa-envelope mr-2"></i> Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 FS1 Engineering. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved user preference
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            html.setAttribute('data-theme', 'dark');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        
+        darkModeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                html.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Flashcard functionality
+        let currentCardIndex = 0;
+        const cards = [
+            {
+                question: "What is the derivative of sin(x)?",
+                answer: "The derivative of sin(x) is cos(x)"
+            },
+            {
+                question: "What is the integral of 1/x?",
+                answer: "The integral of 1/x is ln|x| + C"
+            },
+            {
+                question: "What is the product rule for differentiation?",
+                answer: "d(uv)/dx = u(dv/dx) + v(du/dx)"
+            },
+            {
+                question: "What is the chain rule?",
+                answer: "dy/dx = dy/du * du/dx"
+            },
+            {
+                question: "What is L'Hôpital's Rule used for?",
+                answer: "Evaluating limits of indeterminate forms (0/0 or ∞/∞) by differentiating numerator and denominator"
+            }
+        ];
+        
+        function updateFlashcard() {
+            const flashcard = document.getElementById('flashcard');
+            flashcard.classList.remove('flipped');
+            
+            const questionElement = document.querySelector('.flashcard-question');
+            const answerElement = document.querySelector('.flashcard-answer');
+            const progressElement = document.querySelector('.flashcard-progress');
+            
+            questionElement.textContent = cards[currentCardIndex].question;
+            answerElement.textContent = cards[currentCardIndex].answer;
+            progressElement.textContent = `Card ${currentCardIndex + 1} of ${cards.length}`;
+        }
+        
+        function nextCard() {
+            currentCardIndex = (currentCardIndex + 1) % cards.length;
+            updateFlashcard();
+        }
+        
+        function prevCard() {
+            currentCardIndex = (currentCardIndex - 1 + cards.length) % cards.length;
+            updateFlashcard();
+        }
+        
+        function markCard(difficulty) {
+            // In a real implementation, this would track spaced repetition data
+            console.log(`Card marked as ${difficulty}`);
+            nextCard();
+        }
+        
+        // Initialize the first flashcard
+        updateFlashcard();
+        
+        // Module data and rendering
+        const modules = [
+            {
+                id: 'maths',
+                title: 'Engineering Mathematics',
+                description: 'Mathematical methods for solving engineering problems including calculus, linear algebra, and differential equations.',
+                icon: 'fas fa-square-root-alt',
+                topics: [
+                    { title: 'Calculus', content: 'Differential and integral calculus with engineering applications' },
+                    { title: 'Linear Algebra', content: 'Vectors, matrices, and systems of linear equations' },
+                    { title: 'Differential Equations', content: 'First and second order differential equations' },
+                    { title: 'Fourier Analysis', content: 'Signal processing and frequency domain analysis' }
+                ],
+                problems: [
+                    {
+                        question: 'Find the derivative of f(x) = 3x² + 2x - 5',
+                        solution: 'f\'(x) = 6x + 2'
+                    },
+                    {
+                        question: 'Solve the differential equation dy/dx = 2x',
+                        solution: 'y = x² + C'
+                    }
+                ]
+            },
+            {
+                id: 'electrical',
+                title: 'Electrical and Magnetic Systems',
+                description: 'Fundamentals of electrical circuits and electromagnetic fields.',
+                icon: 'fas fa-bolt',
+                topics: [
+                    { title: 'Circuit Analysis', content: 'Ohm\'s Law, Kirchhoff\'s Laws, and network theorems' },
+                    { title: 'Electromagnetism', content: 'Maxwell\'s equations and electromagnetic fields' },
+                    { title: 'AC Circuits', content: 'Phasors, impedance, and power in alternating current circuits' }
+                ],
+                problems: [
+                    {
+                        question: 'Calculate the equivalent resistance of two 10Ω resistors in parallel',
+                        solution: 'R_eq = (10 × 10)/(10 + 10) = 5Ω'
+                    }
+                ]
+            },
+            {
+                id: 'electronics',
+                title: 'Electronics and Sensors',
+                description: 'Introduction to electronic components and sensor technologies.',
+                icon: 'fas fa-microchip',
+                topics: [
+                    { title: 'Semiconductors', content: 'Diodes, transistors, and basic semiconductor theory' },
+                    { title: 'Digital Electronics', content: 'Logic gates and digital circuits' },
+                    { title: 'Sensors', content: 'Types of sensors and their applications in engineering' }
+                ],
+                problems: [
+                    {
+                        question: 'What is the purpose of a pull-up resistor?',
+                        solution: 'To ensure a defined voltage level when a switch is open'
+                    }
+                ]
+            },
+            {
+                id: 'thermofluids',
+                title: 'Thermofluid Mechanics',
+                description: 'Thermodynamics and fluid mechanics principles for engineering applications.',
+                icon: 'fas fa-water',
+                topics: [
+                    { title: 'Thermodynamics Laws', content: 'First and second laws of thermodynamics' },
+                    { title: 'Fluid Statics', content: 'Pressure and buoyancy in static fluids' },
+                    { title: 'Fluid Dynamics', content: 'Bernoulli\'s equation and flow in pipes' }
+                ],
+                problems: [
+                    {
+                        question: 'Calculate the efficiency of a Carnot engine operating between 500K and 300K',
+                        solution: 'η = 1 - (300/500) = 0.4 or 40%'
+                    }
+                ]
+            },
+            {
+                id: 'materials',
+                title: 'Properties of Engineering Materials',
+                description: 'Study of material properties and selection for engineering applications.',
+                icon: 'fas fa-cubes',
+                topics: [
+                    { title: 'Material Classes', content: 'Metals, ceramics, polymers, and composites' },
+                    { title: 'Mechanical Properties', content: 'Stress-strain behavior and material testing' },
+                    { title: 'Material Selection', content: 'Criteria for selecting materials in design' }
+                ],
+                problems: [
+                    {
+                        question: 'What is Young\'s Modulus a measure of?',
+                        solution: 'Stiffness of a material (ratio of stress to strain in elastic region)'
+                    }
+                ]
+            },
+            {
+                id: 'mechanics',
+                title: 'Mechanics',
+                description: 'Statics and dynamics of mechanical systems.',
+                icon: 'fas fa-weight-hanging',
+                topics: [
+                    { title: 'Statics', content: 'Forces and moments in equilibrium' },
+                    { title: 'Dynamics', content: 'Newton\'s laws and motion analysis' },
+                    { title: 'Vibrations', content: 'Simple harmonic motion and damping' }
+                ],
+                problems: [
+                    {
+                        question: 'A 5kg mass is accelerated at 2m/s². What force is required?',
+                        solution: 'F = ma = 5 × 2 = 10N'
+                    }
+                ]
+            },
+            {
+                id: 'programming',
+                title: 'Introduction to Programming',
+                description: 'Programming fundamentals using MATLAB, Python, and C.',
+                icon: 'fas fa-code',
+                topics: [
+                    { title: 'MATLAB', content: 'Numerical computing and data visualization' },
+                    { title: 'Python', content: 'General purpose programming for engineering' },
+                    { title: 'C Programming', content: 'Low-level programming and microcontrollers' }
+                ],
+                problems: [
+                    {
+                        question: 'What is the MATLAB command to create a 3×3 identity matrix?',
+                        solution: 'eye(3)'
+                    }
+                ]
+            },
+            {
+                id: 'design',
+                title: 'Sustainable Design and Professionalism',
+                description: 'Engineering design process with emphasis on sustainability and professional practice.',
+                icon: 'fas fa-leaf',
+                topics: [
+                    { title: 'Design Process', content: 'Stages of engineering design from concept to implementation' },
+                    { title: 'Sustainability', content: 'Life cycle assessment and sustainable materials' },
+                    { title: 'Professional Ethics', content: 'Ethical responsibilities of engineers' }
+                ],
+                problems: [
+                    {
+                        question: 'What are the three pillars of sustainable development?',
+                        solution: 'Environmental, economic, and social sustainability'
+                    }
+                ]
+            }
+        ];
+        
+        // Render modules
+        const moduleContainer = document.getElementById('module-container');
+        
+        function renderModules() {
+            moduleContainer.innerHTML = '';
+            
+            modules.forEach(module => {
+                const moduleCard = document.createElement('div');
+                moduleCard.className = 'module-card';
+                moduleCard.innerHTML = `
+                    <div class="module-card-header">
+                        <h3>${module.title}</h3>
+                    </div>
+                    <div class="module-card-body">
+                        <div class="module-icon">
+                            <i class="${module.icon}"></i>
+                        </div>
+                        <p>${module.description}</p>
+                    </div>
+                    <div class="module-card-footer">
+                        <a href="module-${module.id}.html" class="btn btn-outline btn-sm">View Module</a>
+                    </div>
+                `;
+                moduleContainer.appendChild(moduleCard);
+            });
+        }
+        
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', () => {
+            renderModules();
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
