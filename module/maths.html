@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Mathematics | FS1 Engineering</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>FS1 Engineering</h1>
+                    <p>Mechanical Engineering Resources</p>
+                </div>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#modules" class="nav-link">Modules</a>
+                <a href="index.html#opportunities" class="nav-link">Opportunities</a>
+                <a href="index.html#tools" class="nav-link">Study Tools</a>
+                <button class="theme-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Module Header -->
+    <section class="section">
+        <div class="container">
+            <div class="module-header">
+                <div class="module-icon-container">
+                    <i class="fas fa-square-root-alt"></i>
+                </div>
+                <h1>Engineering Mathematics</h1>
+                <p class="section-subtitle">Mathematical methods for solving engineering problems including calculus, linear algebra, and differential equations</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h2>Topics</h2>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <button class="topic-btn" onclick="toggleTopic(this)" aria-expanded="false">
+                                <span>Calculus</span>
+                                <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                            </button>
+                            <div class="topic-content">
+                                <p>Differential and integral calculus with engineering applications. Key concepts include limits, derivatives, integrals, and their applications in engineering problems.</p>
+                                <div class="mt-4">
+                                    <h4>Key Formulas:</h4>
+                                    <ul class="space-y-2 mt-2">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-angle-right text-primary mt-1 mr-2"></i>
+                                            <span>Derivative: f'(x) = lim(h→0) [f(x+h)-f(x)]/h</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-angle-right text-primary mt-1 mr-2"></i>
+                                            <span>Integral: ∫f(x)dx = F(x) + C</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <button class="topic-btn" onclick="toggleTopic(this)" aria-expanded="false">
+                                <span>Linear Algebra</span>
+                                <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                            </button>
+                            <div class="topic-content">
+                                <p>Vectors, matrices, and systems of linear equations. Applications include solving systems of equations, transformations, and vector spaces.</p>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <button class="topic-btn" onclick="toggleTopic(this)" aria-expanded="false">
+                                <span>Differential Equations</span>
+                                <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                            </button>
+                            <div class="topic-content">
+                                <p>First and second order differential equations with engineering applications. Includes ordinary and partial differential equations.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h2>Practice Problems</h2>
+                    <div class="practice-problem">
+                        <p><strong>Problem 1:</strong> Find the derivative of f(x) = 3x² + 2x - 5</p>
+                        <button class="btn btn-outline btn-sm mt-2" onclick="toggleSolution(this)">Show Solution</button>
+                        <div class="solution">
+                            <p><strong>Solution:</strong> f'(x) = 6x + 2</p>
+                            <p class="mt-2"><strong>Explanation:</strong> Apply the power rule to each term: d/dx(xⁿ) = nxⁿ⁻¹</p>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <p><strong>Problem 2:</strong> Solve the differential equation dy/dx = 2x</p>
+                        <button class="btn btn-outline btn-sm mt-2" onclick="toggleSolution(this)">Show Solution</button>
+                        <div class="solution">
+                            <p><strong>Solution:</strong> y = x² + C</p>
+                            <p class="mt-2"><strong>Explanation:</strong> Integrate both sides with respect to x: ∫dy = ∫2x dx</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Flashcards section -->
+            <div class="flashcard-demo-section mt-12">
+                <h2 class="text-center mb-8">Mathematics Flashcards</h2>
+                <div class="flashcard-container">
+                    <div class="flashcard-header">
+                        <h3>Calculus</h3>
+                        <div class="flashcard-progress">Card 1 of 5</div>
+                    </div>
+                    
+                    <div class="flashcard" id="math-flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">
+                                <div class="flashcard-question">What is the derivative of sin(x)?</div>
+                                <div class="flashcard-hint"><i class="fas fa-lightbulb"></i> Click to flip</div>
+                            </div>
+                            <div class="flashcard-back">
+                                <div class="flashcard-answer">The derivative of sin(x) is cos(x)</div>
+                                <div class="flashcard-hint"><i class="fas fa-undo"></i> Click to flip back</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flashcard-actions">
+                        <button class="btn btn-outline" onclick="markMathCard('again')">
+                            <i class="fas fa-redo mr-2"></i> Again
+                        </button>
+                        <button class="btn btn-outline" onclick="markMathCard('good')">
+                            <i class="fas fa-check mr-2"></i> Good
+                        </button>
+                    </div>
+                    
+                    <div class="flashcard-nav">
+                        <button class="btn btn-outline" onclick="prevMathCard()">
+                            <i class="fas fa-arrow-left mr-2"></i> Previous
+                        </button>
+                        <button class="btn btn-primary" onclick="nextMathCard()">
+                            Next <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>FS1 Engineering</h3>
+                    <p>Comprehensive mechanical engineering resources for students created by a student.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="index.html#about"><i class="fas fa-user mr-2"></i> About</a></li>
+                        <li class="footer-link"><a href="index.html#modules"><i class="fas fa-book mr-2"></i> Modules</a></li>
+                        <li class="footer-link"><a href="index.html#tools"><i class="fas fa-tools mr-2"></i> Study Tools</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 FS1 Engineering. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Module-specific flashcard functionality
+        let currentMathCardIndex = 0;
+        const mathCards = [
+            {
+                question: "What is the derivative of sin(x)?",
+                answer: "The derivative of sin(x) is cos(x)"
+            },
+            {
+                question: "What is the integral of 1/x?",
+                answer: "The integral of 1/x is ln|x| + C"
+            },
+            {
+                question: "What is the product rule for differentiation?",
+                answer: "d(uv)/dx = u(dv/dx) + v(du/dx)"
+            }
+        ];
+        
+        function updateMathFlashcard() {
+            const flashcard = document.getElementById('math-flashcard');
+            flashcard.classList.remove('flipped');
+            
+            const questionElement = flashcard.querySelector('.flashcard-question');
+            const answerElement = flashcard.querySelector('.flashcard-answer');
+            const progressElement = document.querySelector('.flashcard-progress');
+            
+            questionElement.textContent = mathCards[currentMathCardIndex].question;
+            answerElement.textContent = mathCards[currentMathCardIndex].answer;
+            progressElement.textContent = `Card ${currentMathCardIndex + 1} of ${mathCards.length}`;
+        }
+        
+        function nextMathCard() {
+            currentMathCardIndex = (currentMathCardIndex + 1) % mathCards.length;
+            updateMathFlashcard();
+        }
+        
+        function prevMathCard() {
+            currentMathCardIndex = (currentMathCardIndex - 1 + mathCards.length) % mathCards.length;
+            updateMathFlashcard();
+        }
+        
+        function markMathCard(difficulty) {
+            console.log(`Card marked as ${difficulty}`);
+            nextMathCard();
+        }
+        
+        // Initialize the first flashcard
+        updateMathFlashcard();
+        
+        function toggleTopic(button) {
+            const expanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', !expanded);
+            
+            const content = button.nextElementSibling;
+            content.classList.toggle('active');
+        }
+        
+        function toggleSolution(button) {
+            const solution = button.nextElementSibling;
+            solution.classList.toggle('active');
+            
+            if (solution.classList.contains('active')) {
+                button.textContent = 'Hide Solution';
+            } else {
+                button.textContent = 'Show Solution';
+            }
+        }
+    </script>
+</body>
+</html>
