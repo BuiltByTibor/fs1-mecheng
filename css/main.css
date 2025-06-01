@@ -1,0 +1,137 @@
+/* main.css - Main stylesheet for FS1 Engineering */
+
+/* Dark theme */
+[data-theme="dark"] {
+    --bg: var(--gray-900);
+    --surface: var(--gray-800);
+    --text: var(--gray-100);
+    --text-secondary: var(--gray-400);
+    --border: var(--gray-700);
+    --hover: var(--gray-800);
+    
+    --primary: #3b82f6;
+    --primary-dark: #2563eb;
+    --secondary: #10b981;
+    --accent: #fbbf24;
+    
+    --gradient-hero: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(16, 185, 129, 0.1) 50%, rgba(251, 191, 36, 0.1) 100%);
+}
+
+/* Reset & Base Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg, #ffffff);
+  transition: background-color var(--transition-base), color var(--transition-base);
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ... (previous CSS rules remain the same) ... */
+
+/* Module Page Specific Styles */
+.module-header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+    position: relative;
+}
+
+.module-header::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: var(--gradient-primary);
+    margin: var(--space-6) auto 0;
+    border-radius: var(--radius-full);
+}
+
+.module-icon-container {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto var(--space-6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: var(--radius-full);
+    font-size: var(--text-4xl);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Formula styling for math content */
+.formula {
+    font-family: 'JetBrains Mono', monospace;
+    background: var(--hover);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius);
+    display: inline-block;
+    margin: var(--space-1) 0;
+}
+
+/* Responsive tables */
+.table-container {
+    overflow-x: auto;
+    margin: var(--space-4) 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-4) 0;
+}
+
+th, td {
+    padding: var(--space-3) var(--space-4);
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    background: var(--hover);
+    font-weight: 600;
+}
+
+/* Print styles */
+@media print {
+    .navbar, .footer, .back-to-top {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+    }
+
+    .card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+    }
+
+    .solution {
+        display: block !important;
+    }
+
+    .module-header {
+        page-break-after: avoid;
+    }
+
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+}
